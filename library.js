@@ -3,6 +3,7 @@
 	var path = module.parent.require('path');
 	var nconf = module.parent.require('nconf');
 	var topics = module.parent.require('../src/topics');
+	var user = module.parent.require('../src/user');
 	// var topics = require(path.join(nconf.get('base_dir'), 'src/topics'));
 	// var controllers = require('./lib/controllers');
 	// var winston = module.parent.require('winston');
@@ -32,15 +33,23 @@
   TudoPreso.invokeBot = function(params) {
 	var notification = params.notification;
 	var uids = params.uids;	
+	var uid = 0;
 
-	if (notification.type === 'mention' && uids.includes(1)) {
+	try { 
+		uid = user.getUidByUsername('pjbot');
+		console.log('o uid é:', uid);
+	} catch(err) {
+		winston.error('[pjbot] Não foi encontrado o utilizador do bot.');
+		return;
+	}
+
+	if (notification.type === 'mention' && uids.includes(uid)) {
 		var nid = notification.nid;
 		var pid = notification.pid;
 		var tid = notification.tid;
 		var from = notification.from;
 		var content = "Está tudo preso, seus cabrões!";
-
-		var contentId = Math.floor(Math.random() * 6);
+		/*var contentId = Math.floor(Math.random() * 6);
 		switch (contentId) {
 			case 0: 
 				content = "Está tudo preso, seus cabrões!";
@@ -63,15 +72,13 @@
 			case 6:
 				content = "You can't bypass the capacitor without transcoding the bluetooth AI virus!";
 				break;
-		} 
-
-
+		} */
 		var data = {
 			tid,
 			content,
-			uid: 1
+			uid
 		};
-		topics.reply(data, (v) => {console.log('v', v)});
+		topics.reply(data);	
 	}
   };
 
