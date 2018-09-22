@@ -71,8 +71,8 @@
 		var data = {
 			tid,
 			content,
-			uid: pjbotId,
-			mainPid: pid
+			pid,
+			uid: pjbotId
 		};
 		topics.reply(data);	
 	}
