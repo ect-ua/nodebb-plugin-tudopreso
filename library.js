@@ -33,6 +33,20 @@
   TudoPreso.invokeBot = function(params) {
 	var notification = params.notification;
 	var uids = params.uids;	
+
+	console.log('notification', notification);
+	console.log('uids', uids);
+
+	if (notification.type === 'mention') {
+		var nid = notification.nid;
+		var pid = notification.pid;
+		var tid = notification.tid;
+		var from = notification.from;
+
+		console.log('nid', nid);
+		console.log('pid',pid);
+	}
+
 	var uid = user.getUidByUserslug('pjbot');
 	console.log('uid é', uid);
 
