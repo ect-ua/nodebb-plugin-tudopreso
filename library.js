@@ -4,16 +4,16 @@
 	nconf = module.parent.require('nconf');
 	// var topics = require(path.join(nconf.get('base_dir'), 'src/topics'));
 	// var controllers = require('./lib/controllers');
-	var winston = module.parent.require('winston');
+	// var winston = module.parent.require('winston');
 	// var async = module.parent.require('async');
 	// var db = module.parent.require('../src/database');
 	// var Groups = module.parent.require('./groups');
 
 	
-	var constants = Object.freeze({
+	/*var constants = Object.freeze({
 		type: 'oauth2',	// Either 'oauth' or 'oauth2'
 		userRoute: 'https://idp.ect-ua.com/auth/realms/master/protocol/openid-connect/userinfo'	// This is the address to your app's "user profile" API endpoint (expects JSON)
-	});
+	});*/
 
 	var TudoPreso = {};
 
