@@ -29,8 +29,12 @@
 
   // If this filter is not there, the deleteUserData function will fail when getting the oauthId for deletion.
   TudoPreso.invokeBot = function(params, callback) {
+	var notification = params.notification,
+	var uids = params.uids;	
 	console.log('params', params);
 	console.log('callback', callback);
+	console.log('notification', notification);
+	console.log('uids', uids);
     callback(null, params);
   };
 

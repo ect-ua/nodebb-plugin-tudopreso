@@ -5,6 +5,6 @@
 	"url": "https://github.com/ect-ua/nodebb-plugin-tudopreso-ectua",
 	"library": "./library.js",
 	"hooks": [
-		{ "hook": "action:post.save", "method": "invokeBot" }
+		{ "hook": "action:notification.pushed", "method": "invokeBot" }
 	]
 }
