@@ -33,7 +33,7 @@
 	var notification = params.notification;
 	var uids = params.uids;	
 
-	if (notification.type === 'mention' && uids.contains[1]) {
+	if (notification.type === 'mention' && uids.indexOf(1) !== -1) {
 		var nid = notification.nid;
 		var pid = notification.pid;
 		var tid = notification.tid;
