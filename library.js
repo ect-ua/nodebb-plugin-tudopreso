@@ -32,30 +32,13 @@
   // If this filter is not there, the deleteUserData function will fail when getting the oauthId for deletion.
   TudoPreso.invokeBot = function(params) {
 	var notification = params.notification;
-	var uids = params.uids;	
-
-	console.log('notification', notification);
-	console.log('uids', uids);
-
-	if (notification.type === 'mention') {
-		var nid = notification.nid;
-		var pid = notification.pid;
-		var tid = notification.tid;
-		var from = notification.from;
-
-		console.log('nid', nid);
-		console.log('pid',pid);
+	var uids = params.uids;
+	var pjbotId = nconf.get('bots:pjbot');
+	if (!pjbotId) {
+		winston.error('[tudopresto] Falta configurar pjbot');
 	}
 
-	var uid = user.getUidByUserslug('pjbot');
-	console.log('uid é', uid);
-
-	if (!uid) {
-		winston.error('[pjbot] Não foi encontrado o utilizador do bot.');
-		return;
-	}
-
-	if (notification.type === 'mention' && uids.includes(uid)) {
+	if (notification.type === 'mention' && uids.includes(4)) {
 		var nid = notification.nid;
 		var pid = notification.pid;
 		var tid = notification.tid;
