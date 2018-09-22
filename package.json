@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-tudopreso-ectua",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "Está tudo preso, seus cabrões!",
   "main": "library.js",
   "repository": {
