@@ -40,7 +40,7 @@
 		var from = notification.from;
 		var content = "Está tudo preso, seus cabrões!";
 
-		contentId = Math.floor(Math.random() * 6) + 0;
+		var contentId = Math.floor(Math.random() * 6);
 		switch (contentId) {
 			case 0: 
 				content = "Está tudo preso, seus cabrões!";
