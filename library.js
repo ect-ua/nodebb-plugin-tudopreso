@@ -38,11 +38,38 @@
 		var pid = notification.pid;
 		var tid = notification.tid;
 		var from = notification.from;
+		var content = "Está tudo preso, seus cabrões!";
+
+		contentId = Math.floor(Math.random() * 6) + 0;
+		switch (contentId) {
+			case 0: 
+				content = "Está tudo preso, seus cabrões!";
+				break;
+			case 1:
+				content = "If we inject the array, we can get to the GUI spyware through the redundant RAM port!";
+				break;
+			case 2:
+				content = "You can't parse the application without inputting the cross-platform USB malware!";
+				break;
+			case 3:
+				content = "Rebooting the card won't do anything, we need to network the primary IP feed!";
+				break;
+			case 4:
+				content = "They're inside the network, use the cross-platform SQL port to compress their matrix!";
+				break;
+			case 5:
+				content = "Calculating the matrix won't do anything, we need to inject the bluetooth AI form factor!";
+				break;
+			case 6:
+				content = "You can't bypass the capacitor without transcoding the bluetooth AI virus!";
+				break;
+		} 
+
 
 		var data = {
 			tid,
-			uid: 1,
-			content: "Está tudo preso, seus cabrões!" 
+			content,
+			uid: 1
 		};
 		topics.reply(data, (v) => {console.log('v', v)});
 	}
