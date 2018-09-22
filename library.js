@@ -2,7 +2,7 @@
 	"use strict";
 	var path = module.parent.require('path');
 	var nconf = module.parent.require('nconf');
-	// var topics = require(path.join(nconf.get('base_dir'), 'src/topics'));
+	var topics = require('../topics');
 	// var controllers = require('./lib/controllers');
 	// var winston = module.parent.require('winston');
 	// var async = module.parent.require('async');
@@ -28,14 +28,25 @@
 	}*/
 
   // If this filter is not there, the deleteUserData function will fail when getting the oauthId for deletion.
-  TudoPreso.invokeBot = function(params, callback) {
+  TudoPreso.invokeBot = function(params) {
 	var notification = params.notification;
 	var uids = params.uids;	
-	console.log('params', params);
-	console.log('callback', callback);
-	console.log('notification', notification);
-	console.log('uids', uids);
-    callback(null, params);
+
+	if (notification.type === 'mention' && uids.contains[1]) {
+		var nid = notification.nid;
+		var pid = notification.pid,
+		var tid = notification.tid;
+		var from = notification.from;
+
+		var data = {
+			tid,
+			uid: 1,
+			content: "Está tudo preso, seus cabrões!" 
+		};
+		topics.reply(data, (reply) => {
+			console.log('result', reply);
+		});
+	}
   };
 
 	module.exports = TudoPreso;
