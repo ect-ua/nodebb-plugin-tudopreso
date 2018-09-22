@@ -2,7 +2,8 @@
 	"use strict";
 	var path = module.parent.require('path');
 	var nconf = module.parent.require('nconf');
-	var topics = require(path.join(nconf.get('base_dir'), 'src/topics'));
+	var topics = module.parent.require('../src/topics');
+	// var topics = require(path.join(nconf.get('base_dir'), 'src/topics'));
 	// var controllers = require('./lib/controllers');
 	// var winston = module.parent.require('winston');
 	// var async = module.parent.require('async');
