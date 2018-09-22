@@ -1,7 +1,7 @@
 (function(module) {
 	"use strict";
-	path = module.parent.require('path');
-	nconf = module.parent.require('nconf');
+	var path = module.parent.require('path');
+	var nconf = module.parent.require('nconf');
 	// var topics = require(path.join(nconf.get('base_dir'), 'src/topics'));
 	// var controllers = require('./lib/controllers');
 	// var winston = module.parent.require('winston');
