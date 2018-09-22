@@ -43,7 +43,7 @@
 			uid: 1,
 			content: "Está tudo preso, seus cabrões!" 
 		};
-		topics.reply(data);
+		topics.reply(data, (v) => {console.log('v', v)});
 	}
   };
 
