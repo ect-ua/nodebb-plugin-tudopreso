@@ -34,7 +34,7 @@
 
 	if (notification.type === 'mention' && uids.contains[1]) {
 		var nid = notification.nid;
-		var pid = notification.pid,
+		var pid = notification.pid;
 		var tid = notification.tid;
 		var from = notification.from;
 
