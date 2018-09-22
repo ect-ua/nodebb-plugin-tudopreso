@@ -33,12 +33,10 @@
   TudoPreso.invokeBot = function(params) {
 	var notification = params.notification;
 	var uids = params.uids;	
-	var uid = 0;
+	var uid = user.getUidByUserslug('pjbot');
+	console.log('uid é', uid);
 
-	try { 
-		uid = user.getUidByUsername('pjbot');
-		console.log('o uid é:', uid);
-	} catch(err) {
+	if (!uid) {
 		winston.error('[pjbot] Não foi encontrado o utilizador do bot.');
 		return;
 	}
